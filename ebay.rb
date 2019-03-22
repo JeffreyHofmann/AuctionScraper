@@ -2,9 +2,10 @@
 
 require 'rest-client'
 
-search_term = ARGV[0]
+search_term = ARGV[0].gsub(" ","%20")
 pages = ARGV[1].to_i
 
+#ebay search
 pages.times do |page_num|
   search_url = "https://www.ebay.com/sch/i.html?&_nkw="
   page = "&_pgn=#{page_num+1}"
